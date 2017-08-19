@@ -1,0 +1,35 @@
+/*
+    Media Query mixin.
+*/
+@mixin media-query( $device ) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+    Grids
+*/
+@mixin row {
+  display: flex;
+  justify-content: space-between;
+
+  @include media-query($on-palm) {
+    display: block;
+  }
+}
+
+@mixin col($col: 1, $bottom: $spacing-unit) {
+  flex: $col;
+
+  @include media-query($on-palm) {
+    width: 100%;
+    margin-bottom: $bottom;
+  }
+}

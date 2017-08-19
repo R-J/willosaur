@@ -1,0 +1,19 @@
+// Base styling.
+body {
+  border-top: .3rem solid $color-brand;
+  background: url('images/bg.jpg');
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $color-text;
+}
+
+// Links
+a {
+  color: $color-brand;
+  text-decoration: none;
+  transition: color .3s ease;
+
+  &:hover,
+  &:focus {
+    color: $color-alternate;
+  }
+}

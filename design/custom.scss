@@ -1,0 +1,27 @@
+// Color palette
+$color-text: #4D4E53;
+$color-background: #F4F7F8;
+$color-details: #FFF4CC;
+$color-brand: #0095DD;
+$color-alternate: #558ABB;
+
+// Content width
+$spacing-unit: 3rem;
+$content-width: 950px;
+$on-palm: 600px;
+$on-laptop: 800px;
+
+// Font families
+$title-font-family: spore, cursive;
+$base-font-family: muli, sans-serif;
+
+$base-font-size: 1.4rem;
+$small-font-size: $base-font-size * .75;
+$base-line-height: 1.5;
+$base-font-weight: 400;
+
+@import "scss/mixins",
+        "scss/fonts",
+        "scss/reset",
+        "scss/layout",
+        "scss/elements";

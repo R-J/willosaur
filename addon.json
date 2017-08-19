@@ -1,0 +1,16 @@
+{
+    "name": "Willosaur",
+    "description": "The theme used in the Esporo forums.",
+    "version": "1.0-alpha",
+    "isMobile": true,
+    "hidden": false,
+    "key": "willosaur",
+    "type": "theme",
+    "authors": [
+        {
+            "name": "Arthur Freitas",
+            "email": "email@arthr.me",
+            "homepage": "https://arthr.me"
+        }
+    ]
+}

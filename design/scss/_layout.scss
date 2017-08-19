@@ -1,0 +1,276 @@
+/*
+    Basic layout structure.
+*/
+
+// Site wrapper
+.wrapper {
+  width: 100%;
+  max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+  padding-left: $spacing-unit;
+  padding-right: $spacing-unit;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-query($on-laptop) {
+    max-width: calc(#{$content-width} - #{$spacing-unit});
+    padding-left: $spacing-unit / 2;
+    padding-right: $spacing-unit / 2;
+  }
+}
+
+.clearfix {
+  clear: both;
+  content: ' ';
+  display: block;
+  height: .1rem;
+}
+
+/*
+  Site Header
+*/
+.site-header {
+  @extend .wrapper;
+  margin-top: $spacing-unit;
+
+  .site-title {
+    img {
+      max-width: 12rem;
+      height: auto;
+    }
+
+    @include media-query($on-palm) {
+      display: block;
+      text-align: center;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .site-navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    @media screen and (min-width: $on-palm) {
+      float: right;
+    }
+
+    @include media-query($on-palm) {
+      padding-left: $spacing-unit / 2;
+    }
+
+    li {
+      flex: 0 0 auto;
+      line-height: 3.5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: $small-font-size;
+
+      &:not(:last-child) {
+        margin-right: $spacing-unit / 2;
+      }
+
+      @include media-query($on-palm) {
+        font-size: $base-font-size;
+        line-height: 1.5;
+        padding-top: $spacing-unit / 2;
+        padding-bottom: $spacing-unit / 2;
+
+        &:not(:last-child) {
+          margin-right: $spacing-unit;
+        }
+      }
+    }
+  }
+}
+
+/*
+  Site content
+*/
+
+.site-content {
+  margin-top: $spacing-unit;
+  @extend .wrapper;
+  @include row;
+  justify-content: space-between;
+
+  .forum {
+    @include col(2);
+  }
+
+
+  // Sidebar
+  .sidebar {
+    @include col(1);
+    @media screen and (min-width: $on-palm) {
+      padding-top: $spacing-unit;
+      padding-left: $spacing-unit;
+    }
+
+    .widget {
+      margin-bottom: $spacing-unit;
+      font-size: $base-font-size * .85;
+
+      .widget-title {
+        font-family: $title-font-family;
+        font-weight: 300;
+        font-size: $base-font-size * 1.2;
+
+        svg {
+          height: $base-font-size * 1.2;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .primary {
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba($color-alternate, .4);
+    padding: $spacing-unit;
+    background: $color-background;
+
+    @include media-query($on-palm) {
+      padding: $spacing-unit $spacing-unit / 4;
+    }
+  }
+}
+
+/*
+    Site Footer
+*/
+.site-footer {
+  margin-top: $spacing-unit;
+  background: $color-brand;
+  border-top: .8rem solid rgba($color-background, .4);
+  font-size: $small-font-size;
+  color: $color-background;
+
+  a {
+    color: $color-details;
+
+    &:hover,
+    &:focus {
+      color: $color-background;
+    }
+  }
+
+  .wrapper {
+    @include row;
+    margin-top: $spacing-unit;
+
+    .meta {
+      @include col(3);
+
+      @include media-query($on-palm) {
+        text-align: center;
+      }
+
+      dt {
+        img {
+          width: 10rem;
+          fill: $color-background;
+        }
+      }
+
+      .meta-links {
+        a {
+          &:not(:last-child) {
+            margin-right: $spacing-unit / 2;
+          }
+        }
+
+
+        svg {
+          height: $base-font-size;
+          width: auto;
+          vertical-align: middle;
+          fill: $color-details;
+          transition: fill .3s ease;
+        }
+
+        a:hover,
+        a:focus {
+          svg {
+            fill: $color-background;
+          }
+        }
+      }
+    }
+
+    .brand {
+      text-align: right;
+
+      @include media-query($on-palm) {
+        text-align: center;
+      }
+
+      .brand-links {
+        line-height: 0;
+        margin-bottom: .4rem;
+
+        a {
+          display: inline-block;
+          width: 3rem;
+          height: 3rem;
+          color: transparent;
+          font-size: 0;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          vertical-align: top;
+          opacity: .6;
+          transition: opacity .3s ease;
+
+          &:not(:last-child) {
+            margin-right: $spacing-unit / 4;
+          }
+
+
+          &:hover {
+            opacity: 1;
+          }
+
+          &.spore {
+            background-image: url('images/logo-spore.png');
+          }
+
+          &.maxis {
+            background-image: url('images/logo-maxis.png');
+            width: 4.5rem;
+          }
+
+          &.ea {
+            background-image: url('images/logo-ea.png');
+          }
+        }
+      }
+    }
+  }
+
+  .site-credits {
+    text-align: center;
+    margin-top: $spacing-unit;
+    padding-bottom: $spacing-unit;
+    margin-bottom: 0;
+
+    svg {
+      height: $base-font-size;
+      fill: $color-details;
+    }
+  }
+}
+
+/*
+  Forum specific.
+*/
+
+// Avatars
+.Photo img,
+.ProfilePhoto {
+  border-radius: 60%;
+}
