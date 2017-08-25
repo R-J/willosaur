@@ -17,3 +17,132 @@ a {
     color: $color-alternate;
   }
 }
+
+/*
+    Forms
+*/
+input,
+select,
+textarea,
+button,
+input.dateBox,
+input.SmallInput,
+input.InputBox,
+input.SearchBox {
+  background: lighten($color-background, 20%);
+  font-family: $base-font-family;
+  line-height: $base-line-height;
+  border-radius: .3rem;
+  border: .1rem solid lighten($color-text, 40%);
+  box-shadow: inset 0 .2rem .4rem rgba($color-text, .075);
+  font-size: $base-font-size;
+
+  &:not(:last-child) {
+    margin-right: $spacing-unit / 4;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background: lighten($color-background, 20%);
+  }
+}
+
+input.dateBox,
+input.SmallIndex,
+input.InputBox,
+input.SearchBox,
+textarea {
+  padding: .5rem $spacing-unit / 4;
+  transition: border-color .3s linear;
+
+  &:hover,
+  &:focus {
+    border-color: $color-brand;
+  }
+}
+
+.FormWrapper {
+  background: inherit;
+  padding: 0;
+  margin: $spacing-unit 0;
+}
+
+form {
+  ul {
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      margin-left: 0;
+      margin-bottom: $spacing-unit / 2;
+    }
+  }
+
+  label {
+    font-weight: 700;
+  }
+
+  .Gloss {
+    font-size: $small-font-size;
+  }
+}
+
+// Buttons
+.Button {
+  text-transform: uppercase;
+  font-size: $small-font-size;
+  user-select: none;
+  border-radius: .3rem;
+  box-shadow: 0 1px 3px -1px rgba($color-text,.25);
+  color: $color-text;
+  background-image: linear-gradient(to bottom, $color-background, lighten($color-text, 60%));
+  padding: .65rem 1rem;
+  transition: border-color .3s linear, background-image .3s linear;
+
+  &:hover,
+  &:focus {
+    border-color: $color-text;
+    background-image: linear-gradient(lighten($color-text, 60%), lighten($color-text, 60%));
+  }
+
+  &.Primary {
+    background: linear-gradient(to bottom, $color-brand, $color-alternate);
+    box-shadow: 0 0 0 .1rem rgba($color-text, .15),0 .1rem .1rem rgba($color-text, .2);
+    color: $color-background;
+    border: .1rem solid $color-alternate;
+
+    &:hover,
+    &:focus {
+      border-color: $color-text;
+      background: linear-gradient($color-brand, $color-brand);
+    }
+  }
+}
+
+/*
+    Headings
+*/
+
+.site-content .primary {
+  h1, h2, h3,
+  h4, h5, h6 {
+    font-family: $title-font-family;
+    letter-spacing: 0.05em;
+  }
+
+  h1 {
+    font-weight: 300;
+    font-size: $base-font-size * 2.5;
+  }
+}
+
+/*
+    Forum specific
+*/
+.Tag {
+  background: $color-alternate;
+  border-radius: .3rem;
+  box-shadow: 0 .05rem .1rem $color-alternate;
+  color: $color-background;
+}
