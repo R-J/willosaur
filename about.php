@@ -1,6 +1,6 @@
-<?php if (!defined('APPLICATION')) exit();
+<?php
 
-$ThemeInfo['default'] = array(
+$ThemeInfo['willosaur'] = array(
     'Name' => 'Willosaur',
     'Description' => "The theme used in the Esporo forums.",
     'Version' => 1.0,
