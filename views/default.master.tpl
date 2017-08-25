@@ -6,8 +6,8 @@
 
     {asset name='Head'}
   </head>
-  <body>
-    <header class="site-header">
+  <body id="{$BodyID}" class="{$BodyClass}">
+    <header id="Head" class="site-header">
       <a class="site-title" href="{link path="/"}">{logo}</a>
 
       <ul class="site-navigation">
@@ -22,7 +22,7 @@
       </ul>
     </header>
 
-    <main class="site-content">
+    <main id="Body" class="site-content">
       <article class="forum primary">
         {asset name="Content"}
       </article>
