@@ -11,7 +11,7 @@
       <a class="site-title" href="{link path="/"}">{logo}</a>
 
       <ul class="site-navigation">
-        <li><a href="https://esporo.net/">« Voltar pro site</a></li>
+        {home_link text="« Voltar pro site"}
         {dashboard_link}
         {discussions_link}
         {activity_link}
@@ -45,7 +45,7 @@
         </section>
       </aside>
     </main>
-
+    {event name="AfterBody"}
     <footer class="site-footer">
       <div class="wrapper">
         <div class="meta">
@@ -74,6 +74,5 @@
 
       <p class="site-credits">Site feito pelo <a href="https://arthr.me/" title="Desenvolvedor front-end e consultor WordPress" role="designer">{include file="svg/arthr.svg"}</a> &middot; <a href="https://esporo.net/humans.txt">humans.txt</a></p>
     </footer>
-    {event name="AfterBody"}
   </body>
 </html>
